@@ -1,0 +1,27 @@
+h3 {
+  font-size: 20px;
+  text-decoration: underline;
+}
+.second {
+  /* display: none; */
+  /* visibility: hidden; */
+}
+.blog {
+  border: 10px solid tomato;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px blanchedalmond;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.elit {
+  border: 2px solid tomato;
+  /* display: block; */
+  /* display: inline-block; */
+
+  /* margin only work for right and left  */
+  /* but if we put in block display the it wil work in 4 side */
+  margin: 10px 10px 10px;
+  padding: 5px;
+}
