@@ -1,0 +1,17 @@
+.inline {
+  border: 2px solid white;
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  text-shadow: 1px white;
+  margin: 0px;
+}
+
+.p3 {
+  border: 5px solid;
+}
+* {
+  margin-top: 0px;
+  margin-left: 200px;
+}

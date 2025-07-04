@@ -1,3 +1,16 @@
+.header{
+  width: 700px;
+  height: 300px;
+  /* background-color: aqua; */
+ /* background-color: aqua; */
+  background-image: url('../Images/IMG_0567_edited.jpg');
+  background-size: 500px;
+  /* background-repeat: no-repeat; */
+  background-repeat: repeat-x;
+  color: aqua;
+  text-align: center;
+  
+}
 h3 {
   font-size: 20px;
   text-decoration: underline;
@@ -24,4 +37,14 @@ h3 {
   /* but if we put in block display the it wil work in 4 side */
   margin: 10px 10px 10px;
   padding: 5px;
+}
+
+.amet{
+  border: 2px solid rebeccapurple;
+  /* in general amet in inline , so if we set height or weight it not gonna change  */
+  width: 100px;
+  height: 50px;
+  /* but if we "display " this in - block or inline bock . width and height property will work*/
+  display: inline-block;
+
 }
