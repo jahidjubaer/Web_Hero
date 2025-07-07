@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task1</title>
+    <style>
+      .feeddback #name,
+      #date {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="search-box">Search your Image here:</label>
+    <input type="search" name="search" id="search-box" />
+    <button>Search</button><br />
+    <img
+      src="media/panda.jpg"
+      alt="panda"
+      style="width: 300px; margin-top: 20px"
+    /><br />
+    <a href="">For more click here</a>
+
+    <form class="feeddback">
+      <p>Feedback Form:</p>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" /><br />
+
+      <label for="date">Date:</label>
+      <input type="date" name="date" id="date" /><br />
+
+      <label for="comment">Comment:</label><br />
+      <textarea name="comment" id="comment">write your feedback</textarea><br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
