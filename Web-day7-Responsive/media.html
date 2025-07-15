@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .product{
+            border: 2px solid seagreen;
+            border-radius: 16px;
+            padding: 10px;
+        }
+        .product img{
+            width: 100%;
+            border-radius: 10px;
+        }
+        /* simple media query */
+        @media screen and (max-width: 576px){
+            .container{
+                grid-template-columns: repeat(1, 1fr);
+            }
+            
+            
+        }
+        @media screen and (min-width: 576px) and (max-width: 768px) {
+            .container{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 1</h3>
+            <p>Price : $100</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, error! Esse aperiam earum voluptatem minima quos dolorum, nisi nostrum id!</p>
+        </div>
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 2</h3>
+            <p>Price : $200</p>
+            <p>Aperiam, dolorum excepturi et est repudiandae soluta illo quasi nulla nisi, voluptatem perspiciatis necessitatibus maiores doloribus sunt, labore praesentium quae.</p>
+        </div>
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 3</h3>
+            <p>Price : $300</p>
+            <p>Dolore qui magni optio esse vel laborum neque ab, cumque quia quasi dolorum suscipit veritatis iure minus eligendi sit quaerat!</p>
+        </div>
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 4</h3>
+            <p>Price : $400</p>
+            <p>Porro sit ex sint quia, ab reiciendis, rem dolorum dolorem dignissimos cumque eos sequi odit. Esse, cum. Itaque, ratione temporibus!</p>
+        </div>
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 5</h3>
+            <p>Price : $500</p>
+            <p>Quis iure quisquam architecto iusto omnis incidunt cupiditate sunt quos cumque, ea, nihil officiis nemo minima nulla esse voluptas rem.</p>
+        </div>
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 6</h3>
+            <p>Price : $600</p>
+            <p>Illum commodi assumenda distinctio eius eligendi inventore dicta cumque! Eligendi architecto iste quas beatae adipisci animi fugit a veritatis minus!</p>
+        </div>
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 7</h3>
+            <p>Price : $700</p>
+            <p>Ipsam, pariatur autem. Itaque nesciunt consectetur velit eius possimus. Repellat, veritatis distinctio. Facere minima repellendus vero nostrum recusandae illum nemo.</p>
+        </div>
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 8</h3>
+            <p>Price : $800</p>
+            <p>Beatae consequatur eaque laudantium quasi enim blanditiis perspiciatis quidem incidunt, sunt necessitatibus corrupti veritatis molestias saepe suscipit sint consequuntur provident?</p>
+        </div>
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 9</h3>
+            <p>Price : $900</p>
+            <p>Inventore quam architecto, expedita sint accusamus quae ad! Dolorum est totam iste rerum amet assumenda eaque laborum vero, nobis eos.</p>
+        </div>
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 10</h3>
+            <p>Price : $1000</p>
+            <p>Hic, tempora vitae. Accusamus iste earum tempore totam. Porro, iusto id nulla distinctio necessitatibus quod blanditiis vel ducimus eaque odit.</p>
+        </div>
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 11</h3>
+            <p>Price : $1100</p>
+            <p>Repellendus debitis ipsam libero reiciendis ut, amet sapiente. Quos alias sapiente magni nisi tenetur ex laboriosam accusantium est, veritatis harum.</p>
+        </div>
+        <div class="product">
+            <img src="images/product.jpg" alt="">
+            <h3>Speed Can : 12</h3>
+            <p>Price : $1200</p>
+            <p>Ut officia dicta tempora sunt molestiae hic beatae ex fuga expedita animi? Quis nulla a accusamus facere. Minima, officiis cupiditate?</p>
+        </div>
+    </div>
+</body>
+</html>
