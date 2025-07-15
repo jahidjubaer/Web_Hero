@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            height: 100vh;
+            border: solid rebeccapurple 2px;
+        }
+        .box1{
+            background-color: red;
+            grid-row: 1 / span 2;
+        }
+        .box2{
+            background-color: saddlebrown;
+            grid-column: 2 / span 2;
+        }
+        .box3{
+            background-color: skyblue;
+        }
+        .box4{
+            background-color: seagreen;
+        }
+        @media screen and (max-width: 576px){
+            .container{
+                display: flex;
+                flex-direction: column;
+            }
+            .container div{
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">box 1</div>
+        <div class="box2">box 2</div>
+        <div class="box3">box 3</div>
+        <div class="box4">box 4</div>
+    </div>
+</body>
+</html>
