@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition</title>
+    <style>
+        .trans-div{
+            width: 300px;
+            height: 300px;
+            border: 2px solid sandybrown;
+            background-color: aquamarine;
+            /* property name | duration | easing function | delay
+            transition: width 5s linear 3s, background-color 2s linear 1s ; */
+            transition: transform 2s, border-radius 2s, background-color 2s ;
+        }
+        .trans-div:hover{
+            width: 500px;
+            background-color: black;
+            transform: scale(0.5) rotate(45deg);
+            border-radius: 50%;
+
+        }
+
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Transform : change the shape . this is a css property name</li>
+      <li>
+        Translate : it is the value of the transform style rule . this mean you
+        can move either x axis or y axis or both axis
+      </li>
+      <li>
+        transition : how long it will take to do the change of the shape or
+        color
+      </li>
+    </ul>
+    <div class="trans-div"></div>
+    <div class="trans-div"></div>
+    <div class="trans-div"></div>
+  </body>
+</html>
