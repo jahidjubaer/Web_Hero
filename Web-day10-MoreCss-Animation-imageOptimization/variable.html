@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variable</title>
+    <style>
+      /* use of variable */
+      :root {
+        --primary-color: rgb(49, 12, 97);
+        --font-size-primary: 20px;
+        --secondary-color: tomato;
+      }
+      h1 {
+        color: var(--primary-color);
+      }
+      p {
+        color: var(--primary-color);
+        font-size: var(--font-size-primary);
+      }
+      .box {
+        border: solid var(--primary-color) 3px;
+        /* use of calc  */
+        width: calc(100% - 200px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My custom Property</h1>
+    <p>Also known as css Variable</p>
+    <div class="box">
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi porro
+        saepe autem provident ab, quidem laborum maiores blanditiis ex pariatur
+        cumque assumenda, quia eius aspernatur soluta necessitatibus
+        perspiciatis molestias accusamus!
+      </p>
+    </div>
+  </body>
+</html>
