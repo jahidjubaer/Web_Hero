@@ -1,0 +1,45 @@
+.box-sizing {
+  width: 1000px;
+  height: 1000px;
+  background-color: aquamarine;
+
+  /* center div */
+  /* using flex */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+
+  /* using gird */
+  /* display: grid; */
+  /* you can use any place-content of place-items */
+  /* place-content:  center;
+  place-items: center; */
+
+  /* using center position and transform */
+  /* position: relative; */
+}
+.border-box {
+  width: 400px;
+  height: 400px;
+  background-color: black;
+
+  /* box sizing */
+  box-sizing: border-box;
+  padding: 80px;
+
+  /* position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% ,-50%); */
+  
+}
+
+.content-box{
+    width: 400px;
+    height: 400px;
+    background-color: rgb(216, 43, 43);
+    /* by d content box */
+    padding: 80px;
+}
