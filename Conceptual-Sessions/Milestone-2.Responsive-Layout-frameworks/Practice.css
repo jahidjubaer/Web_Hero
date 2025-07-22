@@ -1,3 +1,10 @@
+/* if there not have auto heading or padding */
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
 .box-sizing {
   width: 1000px;
   height: 1000px;
@@ -19,6 +26,7 @@
 
   /* using center position and transform */
   /* position: relative; */
+  margin-top: 100px;
 }
 .border-box {
   width: 400px;
@@ -42,4 +50,37 @@
     background-color: rgb(216, 43, 43);
     /* by d content box */
     padding: 80px;
+}
+
+/* z-index in css */
+.flag{
+  width: 500px;
+  height: 300px;
+  background-color: green;
+  position: relative;
+}
+.circle{
+  width: 250px;
+  height: 250px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+}
+.circle2{
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* if any div overlay it will be show which z-index value if low  */
+  z-index: 5;
+
 }
