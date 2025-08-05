@@ -27,3 +27,5 @@ console.log(city2);
 city2[1] = 'R';
 console.log(city2);
 // here index 1 value will not change . 
+
+
