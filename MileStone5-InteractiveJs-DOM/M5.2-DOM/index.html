@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour of DOM</title>
+  </head>
+  <body>
+    <header>
+      <h2>This is my Header</h2>
+    </header>
+    <main>
+      <h1>Tour of Dom</h1>
+      <ul>
+        <li>Jahid</li>
+        <li>Shakib</li>
+        <li>Rakib</li>
+      </ul>
+    </main>
+
+    <!-- we can write java script directly here in script tag  -->
+    <script>
+      console.log("this is from index file");
+
+      //   here is an object , how we can access it ;
+      // student. attribute name
+      student = {
+        name: "Jahid Hasan",
+        id: "222-115-116",
+        section: "C",
+        subject: function (subjectName) {
+          console.log("Studying in ", subjectName);
+        },
+      };
+
+      console.log(student.id);
+
+      //   now here we want to access elements using tag how ?
+
+      // for ul tag
+      let list = document.getElementsByTagName("li");
+      console.log(list);
+
+      for (item of list) {
+        console.log(item);
+      }
+
+      // print the list element ;
+      for (item of list) {
+        console.log(item.innerText);
+      }
+    </script>
+
+    <!-- we can link out js form outside  -->
+    <script src="js/first.js"></script>
+  </body>
+</html>
