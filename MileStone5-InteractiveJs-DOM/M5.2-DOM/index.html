@@ -10,13 +10,29 @@
       <h2>This is my Header</h2>
     </header>
     <main>
-      <h1>Tour of Dom</h1>
-      <ul>
-        <li>Jahid</li>
-        <li>Shakib</li>
-        <li>Rakib</li>
-        <li id="passed">Rahim</li>
-      </ul>
+      <section class="Friends-list">
+        <h1>Tour of Dom</h1>
+        <ul>
+          <li class="Favorite">Jahid</li>
+          <li>Shakib</li>
+          <li class="Favorite">Rakib</li>
+          <li id="passed">Rahim</li>
+        </ul>
+      </section>
+
+      <section  class="language-list">
+        <h1 id="p-list">This is my programming language list</h1>
+        <ul>
+          <li class="Favorite">cpp</li>
+          <li>Java</li>
+          <li class="Favorite">Java Script</li>
+          <li>Python</li>
+          <li class="web-dev">HTML</li>
+          <li class="web-dev">CSS</li>
+          <li class="web-dev">Node JS</li>
+          <li class="web-dev">NEXT JS</li>
+        </ul>
+      </section>
     </main>
 
     <!-- we can write java script directly here in script tag  -->
@@ -36,7 +52,7 @@
 
       console.log(student.id);
 
-      //   now here we want to access elements using tag how ?
+      //now here we want to access elements using tag how ?
 
       // for ul tag
       let list = document.getElementsByTagName("li");
@@ -44,20 +60,41 @@
 
       for (item of list) {
         console.log(item);
-      }
 
-      // we can also use access class and id 
-
-      const listID = document.getElementById('passed');
-      console.log(listID.innerText);
-
-      // and so on you can use getElementsByClass();
-      
-
-      // print the list element ;
+        // print the list element ;
       for (item of list) {
         console.log(item.innerText);
       }
+      }
+
+      // we can also use access class and id
+
+      const listID = document.getElementById("passed");
+      console.log(listID.innerText);
+
+      // and so on you can use getElementsByClass();
+
+      const listClass = document.getElementsByClassName("Favorite");
+      console.log(listClass);
+      for (item of listClass) {
+        console.log(item.innerText);
+      }
+
+      // if we want to access element under selected class or id and other 
+
+      const nodeList = document.querySelectorAll('.language-list .Favorite');
+      console.log(nodeList);
+      
+      // if we want to access a single element under selected parent 
+      const nodeList2 = document.querySelector('.language-list .Favorite');
+      console.log(nodeList2);
+
+      // we can also change the value of an attribute 
+      let header2 = document.getElementById('p-list');
+      console.log(header2);
+      
+      header2.innerText = "My favorite language";
+      
     </script>
 
     <!-- we can link out js form outside  -->
