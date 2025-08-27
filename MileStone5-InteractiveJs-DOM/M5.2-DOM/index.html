@@ -15,6 +15,7 @@
         <li>Jahid</li>
         <li>Shakib</li>
         <li>Rakib</li>
+        <li id="passed">Rahim</li>
       </ul>
     </main>
 
@@ -44,6 +45,14 @@
       for (item of list) {
         console.log(item);
       }
+
+      // we can also use access class and id 
+
+      const listID = document.getElementById('passed');
+      console.log(listID.innerText);
+
+      // and so on you can use getElementsByClass();
+      
 
       // print the list element ;
       for (item of list) {
