@@ -44,6 +44,17 @@ console.log(document.body);
     // here have a lesson i have to console log every time ;
 
     const setTitle = favoriteList.setAttribute('title', 'this is favorite book section');
-    console.log(setTitle);
+    console.log(setTitle); 
+
+    // 
+    const player = document.getElementById('player-name');
+    console.log(player.innerHTML);
+    console.log(player.innerText);
+
+    // you can change inner html
+    // player.innerHTML = '<li>my name is jahid</li>'
+    console.log(player.innerText);
+    
+    
     
     

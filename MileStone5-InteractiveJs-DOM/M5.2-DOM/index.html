@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tour of DOM</title>
+    <style>
+      .bg-blue{
+        background-color: blue;
+      }
+      .bold{
+        font-weight: bold;
+      }
+    </style>
+    <!-- adding css -->
+     <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
     <header>
@@ -20,7 +30,7 @@
         </ul>
       </section>
 
-      <section  class="language-list">
+      <section class="language-list" id="language-p">
         <h1 id="p-list">This is my programming language list</h1>
         <ul>
           <li class="Favorite">cpp</li>
@@ -31,6 +41,17 @@
           <li class="web-dev">CSS</li>
           <li class="web-dev">Node JS</li>
           <li class="web-dev">NEXT JS</li>
+        </ul>
+      </section>
+
+      <section id="player-name">
+        <h1>Player Name</h1>
+        <ul>
+          <li>messi</li>
+          <li>shakib</li>
+          <li>liton</li>
+          <li>mahmudullah</li>
+          <li>tamim</li>
         </ul>
       </section>
     </main>
@@ -62,9 +83,9 @@
         console.log(item);
 
         // print the list element ;
-      for (item of list) {
-        console.log(item.innerText);
-      }
+        for (item of list) {
+          console.log(item.innerText);
+        }
       }
 
       // we can also use access class and id
@@ -79,25 +100,10 @@
       for (item of listClass) {
         console.log(item.innerText);
       }
-
-      // if we want to access element under selected class or id and other 
-
-      const nodeList = document.querySelectorAll('.language-list .Favorite');
-      console.log(nodeList);
-      
-      // if we want to access a single element under selected parent 
-      const nodeList2 = document.querySelector('.language-list .Favorite');
-      console.log(nodeList2);
-
-      // we can also change the value of an attribute 
-      let header2 = document.getElementById('p-list');
-      console.log(header2);
-      
-      header2.innerText = "My favorite language";
-      
     </script>
 
     <!-- we can link out js form outside  -->
     <script src="js/first.js"></script>
+    <script src="js/cssInJS.js"></script>
   </body>
 </html>
