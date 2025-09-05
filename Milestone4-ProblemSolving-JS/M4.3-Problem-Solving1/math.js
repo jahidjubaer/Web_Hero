@@ -22,6 +22,9 @@ console.log(Math.random()*10);
 // you can also generate a int number
 console.log(Math.round(Math.random()*10));
 
+// square root 
+console.log(Math.sqrt(16));
+
 
 
 

@@ -1,6 +1,6 @@
 // lets see how to swap the value of variable 
 
-let a = 34, b = 39;
+let a = 34, b = 'hi';
 
 // using temp variable 
 let temp = a;
