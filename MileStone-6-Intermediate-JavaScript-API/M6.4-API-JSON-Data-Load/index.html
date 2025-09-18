@@ -4,13 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>doc</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      #post-container {
+        margin: 30px auto;
+        padding: 20px;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .post-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        height: 40vh;
+      }
+
+      .post-card h2 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      .post-card p {
+        color: #555;
+        line-height: 1.6;
+      }
+    </style>
   </head>
   <body>
     <button onclick="loadData()">Load data</button>
     <button onclick="PostData()">Post data</button>
 
     <button onclick="showPost()">Show Post</button>
-    <ul id="post-title-list"></ul>
+
+    <h1>all the post </h1>
+    <div id="post-container">
+    </div>
+
     <script src="fetch.js"></script>
     <script src="post.js"></script>
   </body>
