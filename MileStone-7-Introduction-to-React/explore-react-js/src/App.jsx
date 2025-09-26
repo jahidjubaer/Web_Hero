@@ -1,10 +1,31 @@
 import "./App.css";
 // import the toDO component form "to-Do file";
 import ToDO from "./to-Do";
+// if the component is not default need to import with {}
+import { TeacherTask } from "./to-Do";
+import Actor from "./Actor";
+import Singer from "./singer";
 
 function App() {
+  const actor = ["jasim", "manna", "bappa raj", "reaj", "shakib"];
+  const singer = [
+    { id: 1, name: "tahsan", age: 45 },
+    { id: 2, name: "toshiba", age: 65 },
+    { id: 3, name: "pritom", age: 25 },
+  ];
   return (
     <>
+      {/* uisng map work in object */}
+      {singer.map((singer) => (
+        <Singer singer={singer}></Singer>
+      ))}
+
+      {/* using map work in array  */}
+      {actor.map((actor) => (
+        // key to stop warning
+        <Actor key={actor.id} actor={actor}></Actor>
+      ))}
+
       {/* use the component like tag */}
       <Student></Student>
       <IdNumber></IdNumber>
@@ -18,6 +39,19 @@ function App() {
       <ToDO task="math" isDone={false}></ToDO>
       <ToDO task="physics" isDone={true}></ToDO>
       <ToDO task="english" isDone={true}></ToDO>
+      <TeacherTask
+        task="exam"
+        sub="english"
+        isDone={true}
+        time={50}
+      ></TeacherTask>
+      <TeacherTask
+        task="read"
+        sub="physics"
+        isDone={false}
+        time={69}
+      ></TeacherTask>
+      <TeacherTask task="write" sub="math" isDone={true} time={1}></TeacherTask>
     </>
   );
 }
