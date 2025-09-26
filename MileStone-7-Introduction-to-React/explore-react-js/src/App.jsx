@@ -1,4 +1,6 @@
 import "./App.css";
+// import the toDO component form "to-Do file";
+import ToDO from "./to-Do";
 
 function App() {
   return (
@@ -12,6 +14,10 @@ function App() {
       <Developer name="rakib" tech="js, java"></Developer>
       <Player name="Jahid " runs="40000"></Player>
       <Player name="Tamim" runs="5000"></Player>
+      {/* need to use {} when i pass boolean value ;  */}
+      <ToDO task="math" isDone={false}></ToDO>
+      <ToDO task="physics" isDone={true}></ToDO>
+      <ToDO task="english" isDone={true}></ToDO>
     </>
   );
 }
@@ -66,6 +72,7 @@ function Student() {
   );
 }
 
+// using destructuring ;
 function Player({ name, runs }) {
   return (
     <div className="student">
