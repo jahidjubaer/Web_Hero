@@ -1,6 +1,22 @@
+import { Suspense } from "react";
 import "./App.css";
 import Bowler from "./bowler";
 import Counter from "./counter";
+import User from "./user";
+
+// fetch the data: we can do it in two way normal fetch and arrow function ;
+// we need not to get the data we need promise ;
+
+const fetchUser = fetch("https://jsonplaceholder.typicode.com/users").then(
+  (res) => res.json()
+);
+
+// with arrow function ;
+// need to call this into App function ; 
+// const userData = async() =>  {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/users");
+//   return res.json();
+// }
 
 function App() {
   // event handler ;
@@ -20,6 +36,13 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
+
+      {/* wrap the data loading component under suspense call the promise ;
+      fallback working until load the data  */}
+      <Suspense fallback={<h2>Loading.....</h2>}>
+        <User fetchUser={fetchUser}></User>
+      </Suspense>
+
       <Bowler></Bowler>
       <Counter></Counter>
       {/* 1 way to handle event  */}
