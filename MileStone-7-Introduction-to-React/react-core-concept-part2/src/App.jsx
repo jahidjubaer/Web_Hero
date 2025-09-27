@@ -1,4 +1,5 @@
 import "./App.css";
+import Bowler from "./bowler";
 import Counter from "./counter";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
+      <Bowler></Bowler>
       <Counter></Counter>
       {/* 1 way to handle event  */}
       <button onClick={handleClick}>button1</button>
