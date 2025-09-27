@@ -67,7 +67,7 @@ button:focus-visible {
   }
 }
 
-.user {
+.card {
   border: solid 2px salmon;
   padding: 20px;
   margin: 10px;
