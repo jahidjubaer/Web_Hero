@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "name": "Jahid Jubaer",
+    "roll": "CSE-2101",
+    "department": "CSE",
+    "semester": "5th",
+    "marks": {
+      "dataStructures": 85,
+      "databaseSystems": 78,
+      "operatingSystems": 88,
+      "discreteMathematics": 90,
+      "computerNetworks": 82
+    },
+    "gpa": 3.85
+  },
+  {
+    "id": 2,
+    "name": "Sara Rahman",
+    "roll": "CSE-2102",
+    "department": "CSE",
+    "semester": "5th",
+    "marks": {
+      "dataStructures": 72,
+      "databaseSystems": 68,
+      "operatingSystems": 75,
+      "discreteMathematics": 80,
+      "computerNetworks": 70
+    },
+    "gpa": 3.25
+  },
+  {
+    "id": 3,
+    "name": "Arif Hossain",
+    "roll": "CSE-2103",
+    "department": "CSE",
+    "semester": "5th",
+    "marks": {
+      "dataStructures": 60,
+      "databaseSystems": 65,
+      "operatingSystems": 70,
+      "discreteMathematics": 58,
+      "computerNetworks": 62
+    },
+    "gpa": 2.85
+  },
+  {
+    "id": 4,
+    "name": "Nusrat Islam",
+    "roll": "CSE-2104",
+    "department": "CSE",
+    "semester": "5th",
+    "marks": {
+      "dataStructures": 90,
+      "databaseSystems": 92,
+      "operatingSystems": 88,
+      "discreteMathematics": 95,
+      "computerNetworks": 91
+    },
+    "gpa": 4.00
+  },
+  {
+    "id": 5,
+    "name": "Rafi Khan",
+    "roll": "CSE-2105",
+    "department": "CSE",
+    "semester": "5th",
+    "marks": {
+      "dataStructures": 77,
+      "databaseSystems": 82,
+      "operatingSystems": 75,
+      "discreteMathematics": 79,
+      "computerNetworks": 85
+    },
+    "gpa": 3.55
+  }
+]
