@@ -43,7 +43,7 @@ const Navbar = () => {
   const [clickMenu, setClickMenu] = useState(false);
   const menuItem = navItems.map((data) => (
     <a href="">
-      <li>{data.name}</li>
+      <li className="hover:bg-white rounded-sm p-1" >{data.name}</li>
     </a>
   ));
   let MenuClick = clickMenu;
@@ -51,7 +51,7 @@ const Navbar = () => {
   console.log(clickMenu);
 
   return (
-    <nav className="flex lg:gap-50 ">
+    <nav className="flex justify-between w-10/12 mx-auto items-center">
       <div className="lg:hidden ">
         {clickMenu || (
           <Menu
@@ -63,10 +63,17 @@ const Navbar = () => {
           <X className="w-10" onClick={() => setClickMenu(!MenuClick)}></X>
         )}
 
-        {clickMenu && <ul className="fixed">{menuItem}</ul>}
+        <ul
+          className={` shadow-lg rounded-xl absolute bg-gray-300 p-2  duration-500 ${
+            clickMenu ? "m-0" : "-mt-100 "
+          } `}
+        >
+          {menuItem}
+        </ul>
       </div>
       <h1>Jahid Hasan</h1>
       <ul className="hidden lg:flex gap-9 justify-center  ">{menuItem}</ul>
+      <button className="btn">Profile</button>
     </nav>
   );
 };

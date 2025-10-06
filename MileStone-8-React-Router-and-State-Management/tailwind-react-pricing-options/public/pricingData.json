@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "planName": "Basic Plan",
+    "pricePerMonth": 20,
+    "shortDescription": "Perfect for beginners who want to start their fitness journey with essential access and support.",
+    "features": [
+      "Access to gym floor (6am–10pm)",
+      "Free locker usage",
+      "1 Personal Training session per month",
+      "Basic fitness assessment"
+    ],
+    "color": "#4CAF50",
+    "buttonText": "Join Basic",
+    "popular": false
+  },
+  {
+    "id": 2,
+    "planName": "Standard Plan",
+    "pricePerMonth": 35,
+    "shortDescription": "Our most popular plan for regular gym-goers looking for flexibility, classes, and expert guidance.",
+    "features": [
+      "24/7 Gym Access",
+      "2 Personal Training sessions per month",
+      "Group fitness classes",
+      "Nutrition consultation",
+      "Sauna access"
+    ],
+    "color": "#2196F3",
+    "buttonText": "Get Standard",
+    "popular": true
+  },
+  {
+    "id": 3,
+    "planName": "Premium Plan",
+    "pricePerMonth": 50,
+    "shortDescription": "Designed for fitness enthusiasts who want full access, personalized plans, and VIP benefits.",
+    "features": [
+      "24/7 Gym & VIP Lounge Access",
+      "Unlimited Personal Training",
+      "Customized diet plan",
+      "Free supplements starter pack",
+      "Priority support & booking"
+    ],
+    "color": "#FF9800",
+    "buttonText": "Upgrade to Premium",
+    "popular": false
+  }
+]
