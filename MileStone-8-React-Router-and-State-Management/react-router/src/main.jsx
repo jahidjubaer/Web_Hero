@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router";
@@ -9,6 +9,8 @@ import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import Profile from "./pages/Profile";
 import Project from "./pages/Project";
+import User from "./pages/User";
+import User2 from "./pages/User2";
 
 // creating a router
 // const router = createBrowserRouter([
@@ -32,6 +34,10 @@ import Project from "./pages/Project";
 // ]);
 
 // here is a nested router ;
+
+const userPromise = fetch("https://jsonplaceholder.typicode.com/users").then(
+  (res) => res.json()
+);
 const newRouter = createBrowserRouter([
   {
     // root path
@@ -45,6 +51,22 @@ const newRouter = createBrowserRouter([
       { path: "blog", Component: Blog },
       { path: "profile", Component: Profile },
       { path: "project", Component: Project },
+
+      // data to load using loader ;
+      {
+        path: "user",
+        Component: User,
+        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
+      },
+      // data loading with suspense ;
+      {
+        path: "user2",
+        element: (
+          <Suspense fallback={<span>loading...</span>}>
+            <User2 userPromise={userPromise}></User2>
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
