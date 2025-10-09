@@ -9,8 +9,11 @@ import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import Profile from "./pages/Profile";
 import Project from "./pages/Project";
-import User from "./pages/User";
+import User from "./pages/Users";
 import User2 from "./pages/User2";
+import UserData from "./components/UserData";
+import Post from "./pages/Post";
+import PostDisplay from "./components/PostDisplay";
 
 // creating a router
 // const router = createBrowserRouter([
@@ -67,6 +70,24 @@ const newRouter = createBrowserRouter([
           </Suspense>
         ),
       },
+
+      // route in dyanamic way
+      {
+        path: "user/:userId",
+        Component: UserData,
+        loader: ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+      },
+      {
+        path: "/posts",
+        Component: Post,
+        loader: () => fetch("https://jsonplaceholder.typicode.com/posts"),
+      },
+      {
+        path : "posts/:postsId", 
+        Component: PostDisplay, 
+        loader : ({params}) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.postsId}`)
+      }
     ],
   },
 ]);

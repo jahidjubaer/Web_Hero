@@ -1,0 +1,7 @@
+.users{
+    border: solid blueviolet 2px; 
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 400px;
+    padding: 10px;
+}
