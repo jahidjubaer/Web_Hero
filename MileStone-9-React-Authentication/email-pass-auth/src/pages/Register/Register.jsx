@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
+  updateProfile,
 } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../firebase/firebase.init";
@@ -23,6 +24,10 @@ const Register = () => {
     event.preventDefault();
     const password = event.target.password.value;
     const email = event.target.email.value;
+    const name = event.target.name.value;
+    const PhotoUrl = event.target.photoUrl.value;
+    console.log(email, password, name, PhotoUrl);
+    
 
     //validation
     if (!passRegex.test(password)) {
@@ -42,6 +47,7 @@ const Register = () => {
     // reset regSuccess and regError
     setRegSuccess(false);
     setRegError("");
+    // create user with email and pass ;
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         console.log(result.user);
@@ -49,7 +55,14 @@ const Register = () => {
         // empty the field after submit;
         event.target.reset();
 
-        // email ve
+        // update profile ;
+        const userProfile = { displayName: name, photoURL: PhotoUrl };
+
+        updateProfile(auth.currentUser, userProfile)
+          .then(() => {})
+          .catch(() => {});
+
+        // email verification
         sendEmailVerification(result.user).then(() => {
           alert("verify your email address ..");
         });
@@ -84,10 +97,10 @@ const Register = () => {
               />
               <label className="label">Photo URL </label>
               <input
-                type="email"
+                type="text"
                 className="input"
-                placeholder="Email"
-                name="email"
+                placeholder="Your photo URL"
+                name="photoUrl"
               />
               <label className="label">Email</label>
               <input
