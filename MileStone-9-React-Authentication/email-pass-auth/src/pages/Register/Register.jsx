@@ -1,7 +1,11 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../firebase/firebase.init";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Register = () => {
   // error and success state ;
@@ -27,9 +31,14 @@ const Register = () => {
       );
       return;
     }
+    // allow checkbox
+    const isChecked = event.target.checkbox.checked;
+    console.log(isChecked);
+    if (!isChecked) {
+      setRegError("allow rules and condition ");
+      return;
+    }
 
-    // empty the field after submit;
-    event.target.reset();
     // reset regSuccess and regError
     setRegSuccess(false);
     setRegError("");
@@ -37,6 +46,13 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         setRegSuccess("Register Successfully");
+        // empty the field after submit;
+        event.target.reset();
+
+        // email ve
+        sendEmailVerification(result.user).then(() => {
+          alert("verify your email address ..");
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -51,48 +67,68 @@ const Register = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-        </div>
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-          <div className="card-body">
-            <form onSubmit={handleRegisterSubmit}>
-              <fieldset className="fieldset">
-                <label className="label">Email</label>
+    <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="text-center lg:text-left">
+        <h1 className="text-5xl font-bold">Register Now</h1>
+      </div>
+      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card-body">
+          <form onSubmit={handleRegisterSubmit}>
+            <fieldset className="fieldset">
+              <label className="label">Name</label>
+              <input
+                type="text"
+                className="input"
+                placeholder="Your Name"
+                name="name"
+              />
+              <label className="label">Photo URL </label>
+              <input
+                type="email"
+                className="input"
+                placeholder="Email"
+                name="email"
+              />
+              <label className="label">Email</label>
+              <input
+                type="email"
+                className="input"
+                placeholder="Email"
+                name="email"
+              />
+              <label className="label">Password</label>
+
+              <div>
                 <input
-                  type="email"
+                  type={showPass ? "text" : "password"}
                   className="input"
-                  placeholder="Email"
-                  name="email"
+                  placeholder="Password"
+                  name="password"
                 />
-                <label className="label">Password</label>
 
-                <div>
-                  <input
-                    type={showPass ? "text" : "password"}
-                    className="input"
-                    placeholder="Password"
-                    name="password"
-                  />
+                <button
+                  onClick={handleShowPassBtn}
+                  className="btn btn-square absolute right-10 bg-transparent border-none shadow-none"
+                >
+                  {showPass ? <FaEyeSlash /> : <FaEye></FaEye>}
+                </button>
+              </div>
 
-                  <button
-                    onClick={handleShowPassBtn}
-                    className="btn btn-square absolute right-10 bg-transparent border-none shadow-none"
-                  >
-                    {showPass ? <FaEyeSlash /> : <FaEye></FaEye>}
-                  </button>
-                </div>
-                <div>
-                  <a className="link link-hover">Forgot password?</a>
-                </div>
-                <button className="btn btn-neutral mt-4">Register</button>
-              </fieldset>
-              {regSuccess && <p className="text-green-500">{regSuccess}</p>}
-              {regError && <p className="text-red-500 ">{regError}</p>}
-            </form>
-          </div>
+              <label className="label">
+                <input name="checkbox" type="checkbox" className="checkbox" />
+                Allow our rules and conditions
+              </label>
+              <button className="btn btn-neutral mt-4">Register</button>
+            </fieldset>
+            {regSuccess && <p className="text-green-500">{regSuccess}</p>}
+            {regError && <p className="text-red-500 ">{regError}</p>}
+          </form>
+          <p>
+            Do you have account already ? Please{" "}
+            <Link className="text-blue-500 underline" to="/login">
+              Login
+            </Link>
+          </p>
         </div>
       </div>
     </div>
