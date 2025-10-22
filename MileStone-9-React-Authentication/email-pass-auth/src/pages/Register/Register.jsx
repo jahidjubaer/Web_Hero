@@ -1,19 +1,35 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../firebase/firebase.init";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   // error and success state ;
   const [regSuccess, setRegSuccess] = useState(false);
   const [regError, setRegError] = useState("");
 
+  // show pass state ;
+  const [showPass, setShowPass] = useState(false);
+
+  // regex validation
+  let passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
   // handle reg
   const handleRegisterSubmit = (event) => {
     event.preventDefault();
     const password = event.target.password.value;
     const email = event.target.email.value;
-    // empty the field after submit; 
-    event.target.reset(); 
+
+    //validation
+    if (!passRegex.test(password)) {
+      setRegError(
+        "password should have one lowercase,uppercase  letter  at least 8 characters long and only contains letters and digits"
+      );
+      return;
+    }
+
+    // empty the field after submit;
+    event.target.reset();
     // reset regSuccess and regError
     setRegSuccess(false);
     setRegError("");
@@ -27,6 +43,13 @@ const Register = () => {
         setRegError(error.message);
       });
   };
+
+  // handleShowPassBtn
+  const handleShowPassBtn = (event) => {
+    event.preventDefault();
+    setShowPass(!showPass);
+  };
+
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -45,12 +68,22 @@ const Register = () => {
                   name="email"
                 />
                 <label className="label">Password</label>
-                <input
-                  type="password"
-                  className="input"
-                  placeholder="Password"
-                  name="password"
-                />
+
+                <div>
+                  <input
+                    type={showPass ? "text" : "password"}
+                    className="input"
+                    placeholder="Password"
+                    name="password"
+                  />
+
+                  <button
+                    onClick={handleShowPassBtn}
+                    className="btn btn-square absolute right-10 bg-transparent border-none shadow-none"
+                  >
+                    {showPass ? <FaEyeSlash /> : <FaEye></FaEye>}
+                  </button>
+                </div>
                 <div>
                   <a className="link link-hover">Forgot password?</a>
                 </div>
