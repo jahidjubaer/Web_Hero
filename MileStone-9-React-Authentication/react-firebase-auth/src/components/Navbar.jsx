@@ -1,12 +1,12 @@
 import React, { use } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { AuthContext } from "../context/authContext/AuthContext";
 
 const Navbar = () => {
-  // accessing value from context 
-  const authInfo = use(AuthContext); 
-  console.log(authInfo);
-  
+  // accessing value from context api using effect ;
+  const { user } = use(AuthContext);
+  console.log("current user ", user);
+
   const listItem = (
     <>
       <li>
@@ -60,7 +60,11 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{listItem}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {user ? (
+          <a className="btn">Sign Out</a>
+        ) : (
+          <Link className="btn" to="/login">Log in</Link>
+        )}
       </div>
     </div>
   );
