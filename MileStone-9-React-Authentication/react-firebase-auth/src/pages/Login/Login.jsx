@@ -1,8 +1,14 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/authContext/AuthContext";
 
 const Login = () => {
+  //get the location
+  const location = useLocation();
+  console.log(location);
+
+  const navigation = useNavigate();
+
   // get the auth inform from authContext ;
   //   destructure the function ;
   const { signinUser } = use(AuthContext);
@@ -11,10 +17,13 @@ const Login = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    // call the function 
+    // call the function
     signinUser(email, password)
       .then((result) => {
         console.log(result.user);
+        // if there have any state then go there or go to home ;
+        // state means form where you try to login ;
+        navigation(location.state || "/");
       })
       .catch((error) => {
         console.log(error.message);

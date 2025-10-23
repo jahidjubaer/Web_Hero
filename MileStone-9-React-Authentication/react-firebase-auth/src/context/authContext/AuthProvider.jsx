@@ -21,6 +21,8 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
+
+
   // firebase sign user ;
   const signinUser = (email, password) => {
     setLoading(true);

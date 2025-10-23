@@ -1,11 +1,15 @@
 import React, { use } from "react";
 import { AuthContext } from "../context/authContext/AuthContext";
-import { Navigate } from "react-router";
+import { Navigate, useLocation } from "react-router";
 
 const PrivetRouters = ({ children }) => {
   // get the user from authContext ;
   const { user, loading } = use(AuthContext);
   console.log(user);
+
+  // current location ;
+  const location = useLocation();
+  console.log(location);
 
   if (loading) {
     return (
@@ -20,7 +24,8 @@ const PrivetRouters = ({ children }) => {
     return children;
   }
   // but if your not sign in please login first ;
-  return <Navigate to="/login"></Navigate>;
+  //   it will give the location form where its try to login ;
+  return <Navigate state={location?.pathname} to="/login"></Navigate>;
 };
 
 export default PrivetRouters;
