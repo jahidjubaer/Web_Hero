@@ -5,13 +5,19 @@ const Navbar = () => {
   const listItem = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className="nav-link" to="/">
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/login">Login </NavLink>
+        <NavLink className="nav-link" to="/login">
+          Login{" "}
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/register">Register</NavLink>
+        <NavLink className="nav-link" to="/register">
+          Register
+        </NavLink>
       </li>
     </>
   );
