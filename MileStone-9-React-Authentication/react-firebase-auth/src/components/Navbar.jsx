@@ -4,8 +4,19 @@ import { AuthContext } from "../context/authContext/AuthContext";
 
 const Navbar = () => {
   // accessing value from context api using effect ;
-  const { user } = use(AuthContext);
-  console.log("current user ", user);
+  const { user, signOutUser } = use(AuthContext);
+  // console.log("current user ", user);
+
+  // handle signout ;
+  const handleSignOut = () => {
+    signOutUser()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const listItem = (
     <>
@@ -24,6 +35,22 @@ const Navbar = () => {
           Register
         </NavLink>
       </li>
+
+      {/* products and profile only show when user login */}
+      {user && (
+        <>
+          <li>
+            <NavLink className="nav-link" to="/register">
+              Products
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="nav-link" to="/register">
+              Profile
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
@@ -60,10 +87,15 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{listItem}</ul>
       </div>
       <div className="navbar-end">
+        {/* sign out handel  */}
         {user ? (
-          <a className="btn">Sign Out</a>
+          <a onClick={handleSignOut} className="btn">
+            Sign Out
+          </a>
         ) : (
-          <Link className="btn" to="/login">Log in</Link>
+          <Link className="btn" to="/login">
+            Log in
+          </Link>
         )}
       </div>
     </div>
