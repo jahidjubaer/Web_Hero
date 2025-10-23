@@ -1,10 +1,18 @@
 // context provider ;
 import React from "react";
 import { AuthContext } from "./AuthContext";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/firebase.init";
 
 const AuthProvider = ({ children }) => {
+  // firebase create user ;
+  const createUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  //   keep the function into authInfo ;
   const authInfo = {
-    email: "hello@gmail.com",
+    createUser,
   };
   return (
     <div>
