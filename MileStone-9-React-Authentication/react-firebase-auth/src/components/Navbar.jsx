@@ -35,17 +35,22 @@ const Navbar = () => {
           Register
         </NavLink>
       </li>
+      <li>
+        <NavLink className="nav-link" to="/dashboard">
+          DashBoard
+        </NavLink>
+      </li>
 
       {/* products and profile only show when user login */}
       {user && (
         <>
           <li>
-            <NavLink className="nav-link" to="/register">
+            <NavLink className="nav-link" to="/products">
               Products
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-link" to="/register">
+            <NavLink className="nav-link" to="/profile">
               Profile
             </NavLink>
           </li>

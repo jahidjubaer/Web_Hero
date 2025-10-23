@@ -12,20 +12,26 @@ import { auth } from "../../firebase/firebase.init";
 const AuthProvider = ({ children }) => {
   // user state ;
   const [user, setUser] = useState(null);
+  // loader state ;
+  const [loading, setLoading] = useState(true);
+
   // firebase create/register  user ;
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // firebase sign user ;
   const signinUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  // firebase sing out user ; 
+  // firebase sing out user ;
   const signOutUser = () => {
-    return signOut(auth); 
-  }
+    setLoading(true);
+    return signOut(auth);
+  };
 
   // observer currently login user
   // onAuthStateChanged(auth, (user) => {
@@ -45,6 +51,9 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log("current user", currentUser);
       setUser(currentUser);
+
+      // after getting the user loading stop
+      setLoading(false);
     });
 
     // unmount user
@@ -57,6 +66,7 @@ const AuthProvider = ({ children }) => {
     createUser,
     signinUser,
     signOutUser,
+    loading,
   };
   return (
     <div>

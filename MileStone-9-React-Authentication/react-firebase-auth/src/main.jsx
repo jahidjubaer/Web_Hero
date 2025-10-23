@@ -9,6 +9,10 @@ import Home from "./pages/Home.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/register/Register.jsx";
 import AuthProvider from "./context/authContext/AuthProvider.jsx";
+import PrivetRouters from "./routers/PrivetRouters.jsx";
+import Products from "./pages/products/Products.jsx";
+import Profile from "./pages/profile/Profile.jsx";
+import Dashboard from "./pages/dashboard/Dashboard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +30,31 @@ const router = createBrowserRouter([
       {
         path: "/register",
         Component: Register,
+      },
+      // privet router ;
+      {
+        path: "/products",
+        element: (
+          <PrivetRouters>
+            <Products></Products>
+          </PrivetRouters>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivetRouters>
+            <Profile></Profile>
+          </PrivetRouters>
+        ),
+      },
+      {
+        path: "/dashboard",
+        element: (
+          <PrivetRouters>
+            <Dashboard></Dashboard>
+          </PrivetRouters>
+        ),
       },
     ],
   },
